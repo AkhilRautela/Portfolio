@@ -120,8 +120,9 @@ body{
     position: absolute;
     bottom: 0px;
     display: flex;
+    justify-content:  space-between;
     width: 100vw;
-    height: 10%;
+    height: 8%;
 }
 
 .first-page{
@@ -147,6 +148,30 @@ body{
     background-image: linear-gradient(to right,red,green);
 }
 
+.icons{
+    padding-left: 10px;
+}
+
+.icons .fab{
+    font-size: 30px;
+    position: relative;
+    padding: 6px;
+    color: white;
+}
+
+.fab:hover{
+    bottom: 10px;
+}
+
+.icons a{
+    text-decoration: none;
+}
+
+.fas{
+    color:white;
+    font-size: 30px;
+    padding: 10px;
+}
 
 @keyframes startanim {
     0%{clip-path: circle(5% at 50% 100%);}

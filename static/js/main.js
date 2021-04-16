@@ -175,7 +175,8 @@ function init(){
     camera.position.set(0,0,250);
     // camera.position.set(0,52,0);
 
-    
+    var musicicon=document.querySelector('.sound');
+    musicicon.style.opacity="0.2";
     listener = new THREE.AudioListener();
     const sound = new THREE.Audio( listener );
     sound.setBuffer( audio );
@@ -189,8 +190,8 @@ function init(){
     velocityx=0;
     velocityy=0.01;
 
+
     window.onmousemove=(event)=>{
-        if(!sound.isPlaying) sound.play();
         var xpos=event.clientX;
         var ypos=event.clientY;
         var relativex=xpos-window.innerWidth/2;
@@ -198,6 +199,17 @@ function init(){
         velocityy=relativex/20000;
         velocityx=relativey/20000;
     }
+
+    musicicon.addEventListener('click',()=>{
+        if(sound.isPlaying){
+            sound.pause();
+            musicicon.style.opacity="0.2";
+        }
+        else{
+            sound.play();
+            musicicon.style.opacity="1";
+        }
+    });
 
     var animate=()=>{
         requestAnimationFrame(animate);
