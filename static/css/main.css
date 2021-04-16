@@ -1,0 +1,160 @@
+body{
+    margin: 0px;
+    box-sizing: border-box;
+    height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.main-div{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0,0,0,0.9);
+    animation: startanim 3s forwards;
+}
+
+.loading{
+    margin-top: 50px;
+    background-color: rgba(255,255,255,0.1);
+    width: 400px;
+    height: 10px;
+    border-radius: 20px;
+}
+
+.loading-data{
+    color:azure;
+    width: 400px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.loader{
+    background-color: aqua;
+    border-radius: 20px;
+    width: 20%;
+    height: 100%;
+    box-shadow: 0 0 10px aqua;
+}
+
+.circularloader{
+    width: 100px;
+    height: 100px;
+    border-top: 3px solid aqua;
+    border-radius: 50%;
+    animation: rotation 1s infinite linear;
+}
+
+.container{
+    position: absolute;
+    right: 0;
+    z-index: 1;
+    height: 100vh;
+    width: 100vw;
+}
+
+.canvi{
+    width: 100%;
+    height: 100%;
+    background-color: aliceblue;
+}
+
+.main-container{
+    position: absolute;
+    z-index: 2;
+    color: white;
+    height: 100%;
+    overflow-y: hidden;
+}
+
+.nav{
+    position: fixed;
+    display: flex;
+    width: 100vw;
+    justify-content: space-between;
+}
+
+.name{
+    /* padding: 10px; */
+    padding-left: 20px;
+    padding-top: 10px;
+}
+
+.items ul{
+    list-style-type: none;
+    display: flex;
+    padding-right: 10px;
+}
+
+.items li{
+    /* padding: 10px; */
+    padding: 15px;
+}
+
+.items li a{
+    text-decoration: none;
+    color: white;
+}
+
+.items li:hover{
+    background-color: rgba(255,255,255,0.7);
+    border-radius: 20px;
+}
+
+.items li:hover a{
+    color: black;
+}
+
+.horizontal-container{
+    display: flex;
+    flex: 1;
+    height: 100%;
+    margin-top: 5%;
+    overflow-x: scroll;
+    width: 100vw;
+    /* background-color: red; */
+}
+
+.footer{
+    position: absolute;
+    bottom: 0px;
+    display: flex;
+    width: 100vw;
+    height: 10%;
+}
+
+.first-page{
+    min-width: 100vw;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: blue; */
+}
+
+.inbetween{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.test{
+    min-width: 10000px;
+    height: 200px;
+    margin: 10px;
+    background-image: linear-gradient(to right,red,green);
+}
+
+
+@keyframes startanim {
+    0%{clip-path: circle(5% at 50% 100%);}
+    50%{clip-path: circle(5% at 50% 50%);}
+    100%{clip-path: circle(100% at 50% 50%);}
+}
+
+@keyframes rotation {
+    0%{transform: rotate(0deg);}
+    100%{transform: rotate(360deg);}
+}
