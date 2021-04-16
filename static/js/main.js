@@ -15,6 +15,8 @@ var listener=undefined;
 
 var audio=undefined;
 
+var curp=0;
+
 
 function setpercentage(percent){
     loadingbar=document.querySelector('.loader');
@@ -26,6 +28,8 @@ function setpercentage(percent){
 
 function load_texture(src){
     return new Promise((res,rej)=>{
+        setpercentage(curp+5);
+        curp+=5;
         new THREE.TextureLoader().load(src,data=>res(data),null,rej);
         // console.log(texture);
     });
@@ -33,40 +37,58 @@ function load_texture(src){
 
 function load_audio(src){
     return new Promise((res,rej)=>{
+        setpercentage(curp+5);
+        curp+=5;
         new THREE.AudioLoader().load(src,data=>res(data),null,rej);
     });
 }
 
 async function textureloader(){
 
+    values=await Promise.all(
+    [
+        load_texture('static/images/space_front.png'),
+        load_texture('static/images/space_back.png'),
+        load_texture('static/images/space_up.png'),
+        load_texture('static/images/space_down.png'),
+        load_texture('static/images/space_left.png'),
+        load_texture('static/images/space_right.png'),
+        load_texture('static/images/earthmap.jpg'),
+        load_texture('static/images/earthbump.jpg'),
+        load_texture('static/images/earthspec.jpg'),
+        load_texture('static/images/earthclouds.jpg'),
+        load_audio( 'static/sound/background.mp3')
+    ]);
     
-    atmostexture.push(await load_texture('static/images/space_front.png'));
+    var cur=0;
+
+    atmostexture.push(values[cur++]);
     setpercentage(5);
-    atmostexture.push(await load_texture('static/images/space_back.png'));
+    atmostexture.push(values[cur++]);
     setpercentage(10);
-    atmostexture.push(await load_texture('static/images/space_up.png'));
+    atmostexture.push(values[cur++]);
     setpercentage(15);
-    atmostexture.push(await load_texture('static/images/space_down.png'));
+    atmostexture.push(values[cur++]);
     setpercentage(20);
-    atmostexture.push(await load_texture('static/images/space_left.png'));
+    atmostexture.push(values[cur++]);
     setpercentage(25);
-    atmostexture.push(await load_texture('static/images/space_right.png'));
+    atmostexture.push(values[cur++]);
     setpercentage(30);
 
     setpercentage(35);
-    earthtexture = await load_texture('static/images/earthmap.jpg');
+    earthtexture = values[cur++];
     setpercentage(45);
-    earthbumptexture=await load_texture('static/images/earthbump.jpg');
+    earthbumptexture= values[cur++];
     setpercentage(55);
-    earthspeculartexture=await load_texture('static/images/earthspec.jpg');
+    earthspeculartexture= values[cur++];
     setpercentage(65);
    
 
 
     setpercentage(75);
-    cloudtexture=await load_texture('static/images/earthclouds.jpg');
+    cloudtexture= values[cur++];
     
-    audio=await load_audio( 'static/sound/background.mp3');
+    audio= values[cur++];
     setpercentage(100);
     init();
     
@@ -165,7 +187,7 @@ function init(){
     sound.setVolume( 0.5 );
     camera.add(listener);
 
-    console.log(container);
+    // console.log(container);
     container.style.right="0%";
 
     velocityx=0;
