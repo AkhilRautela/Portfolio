@@ -29,17 +29,15 @@ function setpercentage(percent){
 function load_texture(src){
     return new Promise((res,rej)=>{
         setpercentage(curp+5);
-        curp+=5;
-        new THREE.TextureLoader().load(src,data=>res(data),null,rej);
+        new THREE.TextureLoader().load(src,data=>{curp+=5;return res(data)},null,rej);
         // console.log(texture);
     });
 }
 
 function load_audio(src){
     return new Promise((res,rej)=>{
-        setpercentage(curp+5);
-        curp+=5;
-        new THREE.AudioLoader().load(src,data=>res(data),null,rej);
+        setpercentage(curp+10);
+        new THREE.AudioLoader().load(src,data=>{curp+=10;return res(data)},null,rej);
     });
 }
 
