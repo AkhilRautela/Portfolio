@@ -22,8 +22,8 @@ function setpercentage(percent){
     loadingbar=document.querySelector('.loader');
     loadingtext=document.querySelector('.percentageload');
     // console.log(loadingbar);
-    loadingbar.style.width=percent.toString()+"%";
-    loadingtext.innerHTML=percent.toString();
+    loadingbar.style.width=percent.toString();
+    loadingtext.innerHTML=percent.toString()+"%";
 }
 
 function load_texture(src){
@@ -141,8 +141,14 @@ window.onload=()=>{
     moreprojects=document.querySelector('.more-projects');
     githublink=document.querySelector('.fa-github');
 
-    githublink.addEventListener('hover',(eve)=>{
-        eve.target.style.bottom='10px';
+    githublink.addEventListener('mouseover',(eve)=>{
+        // console.log("hog");
+        githublink.style.bottom='10px';
+    });
+
+    githublink.addEventListener('mouseout',(eve)=>{
+        // console.log("hog");
+        githublink.style.bottom='0px';
     });
    
     setpercentage(0);
