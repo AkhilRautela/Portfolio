@@ -449,6 +449,15 @@ body{
     background-color: white;
 }
 
+.copyright{
+    position: relative;
+    left:700px;
+    bottom: 10px;
+}
+
+.copyright span{
+    color: red;
+}
 
 
 
