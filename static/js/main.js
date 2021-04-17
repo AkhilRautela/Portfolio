@@ -90,17 +90,101 @@ async function textureloader(){
     
 }
 
+var ltohome;
+var ltoabout;
+var ltocontact;
+var ltoprojects;
+var moreprojects;
+var githublink;
+
+function updatenav(){
+    var scrollpos=horizontalwindow.scrollLeft;
+
+    var activeone=ltohome;
+
+    if(scrollpos==0){
+        activeone=ltohome;
+    }
+    else if(scrollpos<=window.innerWidth){
+        activeone=ltoabout;
+    }
+    else if(scrollpos<=2*window.innerWidth){
+        activeone=ltoprojects;
+        moreprojects.style.display="inline";
+        githublink.style.bottom="10px";
+    }
+    else{
+        activeone=ltocontact;
+    }
+
+    if(activeone!=ltoprojects){
+        moreprojects.style.display="none";
+        githublink.style.bottom="0px";
+    }
+
+    var all=[ltohome,ltoabout,ltocontact,ltoprojects];
+
+    for(var x of all){
+        // console.log(x.classList);
+        x.classList.remove('active-now');
+    }
+    
+    activeone.classList.add('active-now');
+}
 
 window.onload=()=>{
 
+    ltohome=document.querySelector('.linkto-home');
+    ltoabout=document.querySelector('.linkto-about');
+    ltoprojects=document.querySelector('.linkto-projects');
+    ltocontact=document.querySelector('.linkto-contact');
+    moreprojects=document.querySelector('.more-projects');
+    githublink=document.querySelector('.fa-github');
+
+    githublink.addEventListener('hover',(eve)=>{
+        eve.target.style.bottom='10px';
+    });
+   
     setpercentage(0);
     container=document.querySelector('.container');
     container.style.right="110%";
 
     horizontalwindow=document.querySelector('.horizontal-container');
     horizontalwindow.addEventListener('wheel',(eve)=>{
+        horizontalwindow.style.scrollBehavior="auto";
         horizontalwindow.scrollLeft+=eve.deltaY;
+        updatenav();
     });
+
+    horizontalwindow.addEventListener('scroll',(eve)=>{
+        updatenav();
+    });
+
+
+    ltohome.addEventListener('click',(eve)=>{
+        horizontalwindow.style.scrollBehavior="smooth";
+        horizontalwindow.scrollLeft=0;
+        updatenav();
+    });
+
+    ltoabout.addEventListener('click',(eve)=>{
+        horizontalwindow.style.scrollBehavior="smooth";
+        horizontalwindow.scrollLeft=window.innerWidth;
+        updatenav();
+    });
+
+    ltoprojects.addEventListener('click',(eve)=>{
+        horizontalwindow.style.scrollBehavior="smooth";
+        horizontalwindow.scrollLeft=window.innerWidth*2;
+        updatenav();
+    });
+
+    ltocontact.addEventListener('click',(eve)=>{
+        horizontalwindow.style.scrollBehavior="smooth";
+        horizontalwindow.scrollLeft=window.innerWidth*3;
+        updatenav();
+    });
+
 
 
     setTimeout(() => {
@@ -176,6 +260,7 @@ function init(){
     // camera.position.set(0,52,0);
 
     var musicicon=document.querySelector('.sound');
+    var turnupthesound=document.querySelector('.turnUp');
     musicicon.style.opacity="0.2";
     listener = new THREE.AudioListener();
     const sound = new THREE.Audio( listener );
@@ -204,10 +289,12 @@ function init(){
         if(sound.isPlaying){
             sound.pause();
             musicicon.style.opacity="0.2";
+            turnupthesound.style.opacity=1;
         }
         else{
             sound.play();
             musicicon.style.opacity="1";
+            turnupthesound.style.opacity=0;
         }
     });
 
@@ -217,7 +304,7 @@ function init(){
         space.rotation.y+=0.01;
         earth.rotation.y+=velocityy;
         earth.rotation.x+=velocityx;
-        camera.position.x=horizontalwindow.scrollLeft*0.01;
+        camera.position.x=horizontalwindow.scrollLeft*0.1;
         camera.lookAt(0,0,0);
     }
     animate();

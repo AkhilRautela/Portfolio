@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://cdn.icon-icons.com/icons2/1234/PNG/512/1492719123-rocket_83625.png"/>
     <link rel="stylesheet" href="./static/css/main.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r127/three.min.js"></script>
@@ -16,35 +17,123 @@
         <div class="main-container">
             <div class="nav">
                 <div class="name">
-                    <h4>Akhil Rautela</h4>
+                    <p>Akhil Rautela</p>
                 </div>
                 <div class="items">
                     <ul>
-                        <li> <a href="#"> Projects </a> </li>
-                        <li> <a href="https://drive.google.com/uc?export=download&id=1kSPzQZtWJuLAY13YYOW18a6jBY6xkXpv" download>  Resume   </a> </li>
-                        <li> <a href="#"> About   </a> </li>
-                        <li> <a href="#"> Contact </a> </li>   
+                        <a href="#" class="linkto-home active-now"> <li>Home </li> </a> 
+                        <a href="#" class="linkto-about"> <li>About </li> </a> 
+                        <a href="#" class="linkto-projects"> <li>  Projects </li> </a>
+                        <a href="#" class="linkto-contact"> <li>  Contact </li>  </a> 
+                        <a href="https://drive.google.com/uc?export=download&id=1kSPzQZtWJuLAY13YYOW18a6jBY6xkXpv" download><li>   Resume   </li> </a>
                     </ul>
                 </div>
             </div>
             <div class="horizontal-container">
-                <div class="first-page">
+                <div class="page">
                     <div class="inbetween">
                         <h1>Let's Make The World Move</h1>
                         <h3>Scroll down for next page</h3>
                     </div>
                 </div>
-                <div class="second-page">
-                
+                <div class="about-page">
+                    <div class="intro">
+                        <span class="myname">Hello, I'm </span>
+                        <div class="rolling-data">
+                            <span class="data-text"> I'm a </span>
+                        </div>
+                    </div>
+                    <div class="coding-profiles">
+                        <div class="asteriod">
+                            <span>Coding Profiles</span> 
+                            <div class="bar" ></div>
+                            <ul>
+                                <a href="#"><li> CodeChef </li></a>
+                                <a href="#"><li> Codeforces </li></a>
+                                <a href="#"><li> BinarySearch </li></a>
+                                <a href="#"><li> LeetCode </li></a>
+                                <a href="#"><li> AtCoder </li></a>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="projects-page">
+                    <div class="project-container">
+                        <span class="project-heading"> PROJECTS </span>
+                        <div class="projects">
+                            <div class="one-project">
+                                <span class="project-title"> Ledger System </span>
+                                <div class="dibba"></div>
+                                <span class="description">
+                                    This app was built to record all the transactions you do with your friends and family. The app was build using java and for the database, we have used the firebase database and for authentication, we used firebase auth.
+                                </span>
+                                <br>
+                                <a href="https://github.com/AkhilRautela/ledger_system" target="_blank"> <span class="more-info" >Know More </span></a>
+                            </div>
+                            <div class="one-project">
+                                <span class="project-title"> VS-code scripts </span>
+                                <div class="dibba"></div>
+                                <span class="description">
+                                    These Scripts create the folders and number of files required by the user in the folder with proper extension specified. The best feature is you can easily run your c++ and python files with one single command.
+                                </span>
+                                <br>
+                                <a href="https://github.com/AkhilRautela/Competitive-Coding-Helpful-Script-for-VScode-" target="_blank"> <span class="more-info" >Know More </span></a>
+                            </div>
+                            <div class="one-project">
+                                <span class="project-title"> Age Group Detector</span>
+                                <div class="dibba"></div>
+                                <span class="description">
+                                    An Deep learning project can be used to detect the age group of an individual. As it's been very hard to depict a person's age by human eyes too. So the model is trained to achieve the age group of a person with 98% accuracy.
+                                </span>
+                                <br>
+                                <a href="https://github.com/AkhilRautela/Age-Group-Detector-" target="_blank"> <span class="more-info" >Know More </span></a>
+                            </div>
+                            <div class="one-project">
+                                <span class="project-title"> Book Resell</span>
+                                <div class="dibba"></div>
+                                <span class="description">
+                                    The app can be used to sell your old books to another person. This app was build using flutter and for database, storage and authentication I have used firebase. For selling books people can upload there books and it will be shown in timeline of other people where they can chat directly to buyers and buy the book.
+                                </span>
+                                <br>
+                                <a href="https://github.com/AkhilRautela/Book-Resell" target="_blank"> <span class="more-info" >Know More </span></a>
+                            </div>
+                            <div class="one-project">
+                                <span class="project-title"> Java File Transfer </span>
+                                <div class="dibba"></div>
+                                <span class="description">
+                                    The project was build using java.io.sockets that act as endpoints of communication. hereby using that I have implemented file transfer that involves a client and a server that communicate with TCP sockets and io readers for reading files and restoring them.
+                                </span>
+                                <br>
+                                <a href="https://github.com/AkhilRautela/JAVA-FILE-TRANSFER" target="_blank"> <span class="more-info" >Know More </span></a>
+                            </div>
+                            <div class="one-project">
+                                <span class="project-title"> Chatbox </span>
+                                <div class="dibba"></div>
+                                <span class="description">
+                                    A Community chat website with THREE Js great effects. The website was build for learning PHP, SQL, and cookies, so the focus was not well on UI. The website else is fully functional and working well.
+                                </span>
+                                <br>
+                                <a href="https://github.com/AkhilRautela/Chatbox-2" target="_blank"> <span class="more-info" >Know More </span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-page">
+                    <div class="corner-traingle"></div>
+                    <!-- <div class="contact-me">
+                        <h1> Hii I am Full Stack Web Developer</h1>
+                    </div> -->
                 </div>
             </div>
             <div class="footer">
+                <span class="more-projects">More project can be found here</span>
                 <div class="icons">
                     <a href="https://www.linkedin.com/in/akhil-rautela-404aab17a"> <i class="fab fa-linkedin"> </i> </a>
                     <a href="https://www.github.com/AkhilRautela"><i class="fab fa-github"> </i> </a>
                     <a href="https://www.instagram.com/i_am_akhil_rautela/"><i class="fab fa-instagram"></i> </a>         
                 </div>
                 <div class="music">
+                    <p class="turnUp" >Turn on the music</p>
                     <a href="#" class="sound" > <i class="fas fa-music"> </i> </a>
                 </div>
             </div>

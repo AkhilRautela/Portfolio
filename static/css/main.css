@@ -77,6 +77,7 @@ body{
 
 .name{
     /* padding: 10px; */
+    font-size: 20px;
     padding-left: 20px;
     padding-top: 10px;
 }
@@ -88,22 +89,31 @@ body{
 }
 
 .items li{
-    /* padding: 10px; */
     padding: 15px;
+    margin-right: 2px;
+    border-radius: 10px;
 }
 
-.items li a{
+.items a{
+    /* transition: all 0.5s ease-in-out; */
     text-decoration: none;
     color: white;
 }
 
-.items li:hover{
+.items a:hover li{
     background-color: rgba(255,255,255,0.7);
-    border-radius: 20px;
 }
 
-.items li:hover a{
+.items a:hover{
     color: black;
+}
+
+.active-now{
+    color: black;
+}
+
+.active-now li{
+    background-color: rgba(255,255,255,0.7);
 }
 
 .horizontal-container{
@@ -113,6 +123,7 @@ body{
     margin-top: 5%;
     overflow-x: scroll;
     width: 100vw;
+    /* scroll-behavior: smooth; */
     /* background-color: red; */
 }
 
@@ -125,7 +136,7 @@ body{
     height: 8%;
 }
 
-.first-page{
+.page{
     min-width: 100vw;
     height: 80%;
     display: flex;
@@ -167,14 +178,221 @@ body{
     text-decoration: none;
 }
 
+.music{
+    display: flex;
+}
+
 .fas{
     color:white;
     font-size: 30px;
     padding: 10px;
 }
 
+.about-page{
+    min-width: 100vw;
+    height: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* background-color: blue; */
+}
+
+.intro{
+    padding-left: 40px;
+    font-size: 30px;
+}
+
+.myname::after{
+    color: red;
+    content: "Akhil Rautela.";
+}
+
+.data-text::after{
+    color: red;
+    content: "Full Stack Web Developer.";
+    animation: changedata 5s infinite linear;
+}
+
+.coding-profile{
+    
+}
+
+.asteriod{
+    margin-right: 50px;
+    width: 20vw;
+    height: 50vh;
+    background-color: rgba(255,255,255,0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: rgba(255,255,255,0.7);
+    border-radius: 5%;
+    padding: 10px;
+}
+
+.asteriod span{
+    font-size: 20px;
+}
+
+.asteriod ul{
+    padding-right: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.asteriod li{
+    list-style-type: none;
+    width: fit-content;
+    background-color: white;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+    /* transition: all 0.5s ease-out; */
+}
+
+.asteriod a{
+    text-decoration: none;
+    color: black;
+    /* transition: all 0.5s ease-out; */
+}
+
+.asteriod a:hover li{
+    background-color: black;
+}
+
+.asteriod a:hover{
+    color: white;
+}
+
+.asteriod:hover{
+    background-color: rgba(255,255,255,0.4);
+}
+
+
+.bar{
+    margin: 10px;
+    border-radius: 10px;
+    width: 60px;
+    height: 5px;
+    background-color: black;
+}
+
+.projects-page{
+    min-width: 100vw;
+    height: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    /* background-color: blue; */
+}
+
+.projects{
+    margin: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+}
+
+.projects div{
+    background-color: rgba(255, 255, 255,0.2);
+    width: 400px;
+    height: 250px;
+}
+
+.projects div:hover{
+    background-color: rgba(255, 255, 255,0.1);
+}
+
+.project-heading{
+    font-size: 30px;
+}
+
+.project-container{
+    padding-top: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.one-project{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-page{
+    min-width: 100vw;
+    height: 80%;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    justify-content: space-between;
+    /* background-color: blue; */
+}
+
+.one-project a{
+    text-decoration: none;
+    border: 2px solid black;
+    padding: 8px;
+    color: black;
+}
+
+.one-project a:hover{
+    background-color: black;
+    color: white;
+}
+
+.description{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.project-title{
+    margin-top: 0px;
+    font-size: 20px;
+}
+
+.dibba{
+    margin: 10px;
+    background-color: black;
+    max-width: 40px;
+    max-height: 5px;
+    border-radius: 20%;
+}
+
+.more-projects{
+    position: absolute;
+    top: -50px;
+    left: 70px;
+    background-color: wheat;
+    color: black;
+    padding: 10px;
+    border-radius: 10px 10px 10px 0;
+    display: none;
+}
+
+.corner-traingle{
+    width: 40%;
+    height: 80%;
+    transform: rotate(45deg);
+    position: relative;
+    left:1350px;
+    top:50px;
+    background-color: rgba(255,255,255,0.1);
+}
+
+@keyframes changedata {
+    33%{content: 'Competitive Coder.';}
+    66%{content: 'Android Developer.';}
+}
+
 @keyframes startanim {
     0%{clip-path: circle(5% at 50% 100%);}
+    /* 25%{clip-path: circle(5% at 50% 30%);} */
     50%{clip-path: circle(5% at 50% 50%);}
     100%{clip-path: circle(100% at 50% 50%);}
 }
