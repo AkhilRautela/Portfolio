@@ -133,6 +133,30 @@ function updatenav(){
 }
 
 window.onload=()=>{
+    var firebaseConfig = {
+        apiKey: "AIzaSyAH-T_ZdOemMfUwxMeGzjJX0gSLnBz-Goo",
+        authDomain: "myportfolio-d97b7.firebaseapp.com",
+        projectId: "myportfolio-d97b7",
+        storageBucket: "myportfolio-d97b7.appspot.com",
+        messagingSenderId: "979456449949",
+        appId: "1:979456449949:web:9600df77b721d79b47a374",
+        measurementId: "G-Z1NDNL72Y2"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+
+    var database=firebase.database();
+
+    document.querySelector('.submit-link').addEventListener('click',()=>{
+        var name=document.querySelector('#name');
+        var email=document.querySelector('#email');
+        var message=document.querySelector('#message');
+        database.ref(`${name.value}/${email.value}`).set(message.value);
+        name.value="";
+        email.value="";
+        message.value="";
+    });
 
     ltohome=document.querySelector('.linkto-home');
     ltoabout=document.querySelector('.linkto-about');

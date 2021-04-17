@@ -8,7 +8,12 @@
     <link rel="stylesheet" href="./static/css/main.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r127/three.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-database.js"></script>
     <script src="./static/js/main.js"></script>
+
+
     
     <title>Portfolio Akhil Rautela</title>
 </head>
@@ -119,10 +124,15 @@
                     </div>
                 </div>
                 <div class="contact-page">
-                    <div class="corner-traingle"></div>
-                    <!-- <div class="contact-me">
-                        <h1> Hii I am Full Stack Web Developer</h1>
-                    </div> -->
+                    <div class="contact-me">
+                        <span class="git"> Get in Touch </span>
+                        <input type="text" name="name" id="name" placeholder="Name"/>
+                        <input type="email" name="email" id="email" placeholder="Email"/>
+                        <textarea placeholder="message" id="message" ></textarea> 
+                        <a href="#" class="submit-link"> <span class="submit"> Submit </span></a>
+                    </div>
+                    <div class="corner-traingle">
+                    </div>
                 </div>
             </div>
             <div class="footer">
