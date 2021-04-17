@@ -22,7 +22,7 @@ function setpercentage(percent){
     loadingbar=document.querySelector('.loader');
     loadingtext=document.querySelector('.percentageload');
     // console.log(loadingbar);
-    loadingbar.style.width=percent.toString();
+    loadingbar.style.width=percent.toString()+"%";
     loadingtext.innerHTML=percent.toString()+"%";
 }
 
