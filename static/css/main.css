@@ -1,3 +1,6 @@
+html{
+    font-size: 15px;
+}
 body{
     margin: 0px;
     box-sizing: border-box;
@@ -77,12 +80,13 @@ body{
 
 .name{
     /* padding: 10px; */
-    font-size: 20px;
+    font-size: 1.3rem;
     padding-left: 20px;
     padding-top: 10px;
 }
 
 .items ul{
+    /* padding-left: 10px; */
     list-style-type: none;
     display: flex;
     padding-right: 10px;
@@ -123,8 +127,13 @@ body{
     margin-top: 5%;
     overflow-x: scroll;
     width: 100vw;
+    scrollbar-width: 0px;
     /* scroll-behavior: smooth; */
     /* background-color: red; */
+}
+
+body::-webkit-scrollbar{
+    display: none;
 }
 
 .footer{
@@ -164,7 +173,7 @@ body{
 }
 
 .icons .fab{
-    font-size: 30px;
+    font-size: 2rem;
     position: relative;
     padding: 6px;
     color: white;
@@ -184,7 +193,7 @@ body{
 
 .fas{
     color:white;
-    font-size: 30px;
+    font-size: 2rem;
     padding: 10px;
 }
 
@@ -231,7 +240,7 @@ body{
 }
 
 .asteriod span{
-    font-size: 20px;
+    font-size: 1.3rem;
 }
 
 .asteriod ul{
@@ -306,7 +315,7 @@ body{
 }
 
 .project-heading{
-    font-size: 30px;
+    font-size: 2rem;
 }
 
 .project-container{
@@ -344,7 +353,7 @@ body{
 
 .project-title{
     margin-top: 0px;
-    font-size: 20px;
+    font-size: 1.3rem;
 }
 
 .dibba{
@@ -409,7 +418,7 @@ body{
     width: 40%;
     height: 5%;
     border-radius: 5px;
-    font-size: 15px;
+    font-size: 1rem;
     opacity: 0.5;
 }
 
@@ -418,14 +427,14 @@ body{
     width: 40%;
     height: 5%;
     border-radius: 5px;
-    font-size: 15px;
+    font-size: 1rem;
     opacity: 0.5;
 }
 
 #message{
     max-width: 100%;
     border-radius: 5px;
-    font-size: 15px;
+    font-size: 1rem;
     opacity: 0.5;
     margin: 10px;
     width: 60%;
